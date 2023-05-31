@@ -1,0 +1,23 @@
+<h2>Select a category:</h2>
+<select [(ngModel)]="selectedCategory" (change)="onCategoryChange()">
+  <option value="">-- Select Category --</option>
+  <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+</select>
+
+<div *ngIf="questions.length > 0">
+  <h2>Quiz Questions</h2>
+  <div *ngFor="let question of questions; let i = index">
+    <h3>{{ i + 1 }}. {{ question.question }}</h3>
+    <div *ngFor="let option of shuffledOptions[i]; let j = index">
+      <label>
+        <input type="radio" name="answer{{ i }}" [(ngModel)]="selectedAnswers[i]" [value]="option">
+        {{ option }}
+      </label>
+    </div>
+  </div>
+  <button (click)="submitQuiz()">Submit</button>
+</div>
+
+<div *ngIf="score !== null">
+  <h2>Your Score: {{ score }}</h2>
+</div>

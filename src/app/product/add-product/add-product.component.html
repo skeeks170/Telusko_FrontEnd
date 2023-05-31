@@ -1,0 +1,31 @@
+<div style="max-width: 500px; margin: 0 auto;">
+    <form #registerform="ngForm" (ngSubmit)="addProduct()">
+
+        <div class="mb-3">
+            <label for="productName" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="productName" [(ngModel)]="newProduct.name" name="productName"
+                placeholder="Enter Product Name">
+        </div>
+
+        <div class="mb-3">
+            <label for="productType" class="form-label">Product Type</label>
+            <input type="text" class="form-control" id="productType" [(ngModel)]="newProduct.type" name="productType"
+                placeholder="Enter Product Type">
+        </div>
+
+        <div class="mb-3">
+            <label for="productPlace" class="form-label">Product Place</label>
+            <input type="text" class="form-control" id="productPlace" [(ngModel)]="newProduct.place" name="productPlace"
+                placeholder="Enter Product Place">
+        </div>
+
+        <div class="mb-3">
+            <label for="productWarrantyYear" class="form-label">Product Warranty Year</label>
+            <input type="text" class="form-control" id="productWarrantyYear" [(ngModel)]="newProduct.warrantyYear" name="productWarrantyYear"
+                placeholder="Enter Product Warranty Year">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add product</button>
+        <button type="button" (click)="goToProductList()">Go Back</button>
+    </form>
+</div>
